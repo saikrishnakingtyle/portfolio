@@ -29,4 +29,5 @@ router.get("/blogs", function (req, res) {
     });
 });
 console.log("444");
+module.exports = router;
 //# sourceMappingURL=BlogRoute.js.map

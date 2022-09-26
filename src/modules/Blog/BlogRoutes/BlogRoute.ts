@@ -21,3 +21,5 @@ router.get("/blogs", async function (req,res){
     }
 })
 console.log("444")
+
+module.exports = router ;

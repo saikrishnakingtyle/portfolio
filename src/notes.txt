@@ -4,4 +4,7 @@ git add README.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/krishCoolCoder/portfolio.git
-git push -u origin main
+git remote add krishCoolCoder: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 origin https://github.com/krishCoolCoder/portfolio.git
+git push -u  origin main
+
+git push https://krishCoolCoder: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@github.com/krishCoolCoder/portfolio.git
