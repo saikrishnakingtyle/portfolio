@@ -30,6 +30,26 @@ model Blog {
   createdAt DateTime? @default(now())
 }
 
+model ActivityLogs {
+  id        Int       @id @default(autoincrement())
+  date      String? @db.VarChar(255)
+  description String? @db.VarChar(255)
+  deletedAt DateTime? @db.DateTime(0)
+  createdAt DateTime? @default(now())
+  workLogs WorkLogs[]
+}
+
+model WorkLogs {
+  id        Int       @id @default(autoincrement())
+  activityLogs ActivityLogs @relation(fields: [activityLogId], references: [id])
+  activityLogId Int @db.Int()
+  title String? @db.VarChar(255)
+  description String @db.VarChar(255)
+  content String @db.VarChar(255)
+  deletedAt DateTime? @db.DateTime(0)
+  createdAt DateTime? @default(now())
+}
+
 
 // model Users {
 //   id      Int      @id @default(autoincrement())

@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { prisma, PrismaClient } from "@prisma/client";
 
 export class headstart {
     async blogInsert():Promise<any>
@@ -16,6 +16,68 @@ export class headstart {
           }
           )
           console.log(user2)
+    }
+    async bulkInsertActivityLogs()
+    {
+        const prisma = new PrismaClient();
+        const activityLogs = await prisma.activityLogs.createMany(
+            {
+                data: [
+                    {
+                        date: "27-09-2022",
+                        description: "worked on some of the modules in inventory."
+                    },
+                    {
+                        date: "26-09-2022",
+                        description: "Attended a interview and it didn't go well as expected."
+                    }
+                ]
+            }
+        )
+    }
+    async bulkInsertWorkLogs()
+    {
+        const prisma = new PrismaClient();
+        const workLogs = await prisma.workLogs.createMany(
+            {
+                data: [
+                    {
+                        activityLogId: 1,
+                        title: "testing",
+                        description: "this is a test.",
+                        content: "this is just a test."
+                    },
+                    {
+                        activityLogId: 2,
+                        title: "testing",
+                        description: "this is a test.",
+                        content: "this is just a test."
+                    },
+                    {
+                        activityLogId: 3,
+                        title: "testing",
+                        description: "this is a test.",
+                        content: "this is just a test."
+                    }
+                ]
+            }
+        )
+        
+        return workLogs;
+    }
+    async singleWorkLogsInsert(){
+        const prisma = new PrismaClient();
+        const worklog = await prisma.workLogs.create(
+            {
+                data: {
+                            activityLogId: 1,
+                            title: "testing",
+                            description: "this is a test.",
+                            content: "this is just a test."
+                }
+            }
+        )
+        return worklog;
     }
     async bulkInsert()
     {
