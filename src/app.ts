@@ -6,10 +6,8 @@ const app = express();
 const port = 3000;
 
 app.use(middleware);
-// app.use('/user', require('./modules/User/UserRoutes/UserRoute'));
-console.log("what")
+app.use('/user', require('./modules/User/UserRoutes/UserRoute'));
 // app.use('/blog', require('./modules/Blog/BlogRoutes/BlogRoute'));
-console.log("what")
 app.use('/contact', require('./modules/Blog/BlogRoutes/BlogRoute'));
 
 app.listen(port, () => {

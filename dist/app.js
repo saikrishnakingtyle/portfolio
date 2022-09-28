@@ -8,7 +8,7 @@ const middleware_1 = require("./middleware/middleware");
 const app = (0, express_1.default)();
 const port = 3000;
 app.use(middleware_1.middleware);
-// app.use('/user', require('./modules/User/UserRoutes/UserRoute'));
+app.use('/user', require('./modules/User/UserRoutes/UserRoute'));
 console.log("what");
 // app.use('/blog', require('./modules/Blog/BlogRoutes/BlogRoute'));
 console.log("what");

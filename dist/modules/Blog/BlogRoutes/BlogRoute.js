@@ -11,11 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const bodyParser = require("body-parser");
 var router = require("express").Router();
-console.log("11111");
 router.use(bodyParser.urlencoded({ extended: true }));
-console.log("22222");
 router.use(bodyParser.json());
-console.log("333");
 router.use(bodyParser.raw());
 router.get("/blogs", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
