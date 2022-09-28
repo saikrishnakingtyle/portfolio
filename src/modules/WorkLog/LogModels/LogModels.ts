@@ -3,10 +3,10 @@ import { PrismaClient } from "@prisma/client";
 export async function getEmployeeActivityLogsModel (id: number)
 {
     const prisma = new PrismaClient();
-    const employeeActivityLogs = await prisma.activityLogs.findFirst(
+    const employeeActivityLogs = await prisma.activityLogs.findMany(
         {
             where: {
-                id: id
+                userId: id
             }
         }
         )
@@ -19,7 +19,8 @@ export async function saveEmployeeActivityLogsModel (payload: any)
         {
             data: {
                 date: payload.date,
-                description: payload.description
+                description: payload.description,
+                userId: payload.userId
             }
         }
         )
@@ -28,13 +29,14 @@ export async function saveEmployeeActivityLogsModel (payload: any)
 export async function getEmployeeWorkLogsModel (id: number)
 {
     const prisma = new PrismaClient();
-    const employeeWorkLogs = await prisma.workLogs.findFirst(
+    const employeeWorkLogs = await prisma.workLogs.findMany(
         {
             where : {
-                id : id
+                activityLogId : id
             }
         }
         )
+        
         return employeeWorkLogs;
 }
 

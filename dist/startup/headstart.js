@@ -28,6 +28,68 @@ class headstart {
             console.log(user2);
         });
     }
+    bulkInsertActivityLogs() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const prisma = new client_1.PrismaClient();
+            const activityLogs = yield prisma.activityLogs.createMany({
+                data: [
+                    {
+                        date: "27-09-2022",
+                        description: "worked on some of the modules in inventory.",
+                        userId: 1
+                    },
+                    {
+                        date: "26-09-2022",
+                        description: "Attended a interview and it didn't go well as expected.",
+                        userId: 1
+                    }
+                ]
+            });
+            return activityLogs;
+        });
+    }
+    bulkInsertWorkLogs() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const prisma = new client_1.PrismaClient();
+            const workLogs = yield prisma.workLogs.createMany({
+                data: [
+                    {
+                        activityLogId: 1,
+                        title: "testing",
+                        description: "this is a test.",
+                        content: "this is just a test."
+                    },
+                    {
+                        activityLogId: 2,
+                        title: "testing",
+                        description: "this is a test.",
+                        content: "this is just a test."
+                    },
+                    {
+                        activityLogId: 1,
+                        title: "testing",
+                        description: "this is a test.",
+                        content: "this is just a test."
+                    }
+                ]
+            });
+            return workLogs;
+        });
+    }
+    singleWorkLogsInsert() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const prisma = new client_1.PrismaClient();
+            const worklog = yield prisma.workLogs.create({
+                data: {
+                    activityLogId: 1,
+                    title: "testing",
+                    description: "this is a test.",
+                    content: "this is just a test."
+                }
+            });
+            return worklog;
+        });
+    }
     bulkInsert() {
         return __awaiter(this, void 0, void 0, function* () {
             const prisma = new client_1.PrismaClient();
@@ -68,7 +130,7 @@ class headstart {
                 const data = yield prisma.user.create({
                     data: {
                         name: "Sai Krishna",
-                        mail: "saikingstryl@gmail.com",
+                        mail: "saikingstyle@gmail.com",
                         password: "helloworld",
                         isActive: true,
                     }

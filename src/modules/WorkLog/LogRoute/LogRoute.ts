@@ -1,4 +1,5 @@
 import { getEmployeeActivityLogsLogic, getEmployeeWorkLogsLogic, saveEmployeeActivityLogsLogic, saveEmployeeWorkLogsLogic } from "../LogLogic/LogLogic";
+import { headstart } from "../../../startup/headstart"
 
 const bodyParser = require("body-parser");
 
@@ -56,7 +57,14 @@ router.get("/saveactivityLog", async function (req, res) {
   }
 });
 
-router.get("/saveworkLog", async function (req, res) {
+router.get("/saveworklog", async function (req, res) {
+  // const test3 = await new headstart().userInsert();
+  // console.log(test3)
+  // const test = await new headstart().bulkInsertActivityLogs();
+  // console.log("successfully inserted the demo data")
+  // console.log(test)
+  // const test2 = await new headstart().bulkInsertWorkLogs();
+  // console.log(test2)
     const worklog = await saveEmployeeWorkLogsLogic(parseInt(req.query.id));
     console.log(req.query.id);
   if (worklog != null || worklog != undefined) {
@@ -71,3 +79,5 @@ router.get("/saveworkLog", async function (req, res) {
     });
   }
 });
+
+module.exports = router;

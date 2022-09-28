@@ -25,15 +25,18 @@ export class headstart {
                 data: [
                     {
                         date: "27-09-2022",
-                        description: "worked on some of the modules in inventory."
+                        description: "worked on some of the modules in inventory.",
+                        userId: 1
                     },
                     {
                         date: "26-09-2022",
-                        description: "Attended a interview and it didn't go well as expected."
+                        description: "Attended a interview and it didn't go well as expected.",
+                        userId: 1
                     }
                 ]
             }
         )
+        return activityLogs;
     }
     async bulkInsertWorkLogs()
     {
@@ -54,7 +57,7 @@ export class headstart {
                         content: "this is just a test."
                     },
                     {
-                        activityLogId: 3,
+                        activityLogId: 1,
                         title: "testing",
                         description: "this is a test.",
                         content: "this is just a test."
@@ -117,7 +120,7 @@ export class headstart {
         const data = await prisma.user.create({
             data: {
                 name: "Sai Krishna",
-                mail: "saikingstryl@gmail.com",
+                mail: "saikingstyle@gmail.com",
                 password: "helloworld",
                 isActive: true,
             }

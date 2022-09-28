@@ -9,6 +9,7 @@ app.use(middleware);
 app.use('/user', require('./modules/User/UserRoutes/UserRoute'));
 // app.use('/blog', require('./modules/Blog/BlogRoutes/BlogRoute'));
 app.use('/contact', require('./modules/Blog/BlogRoutes/BlogRoute'));
+app.use('/log', require('./modules/WorkLog/LogRoute/LogRoute'));
 
 app.listen(port, () => {
   return console.log(`Express is listening at http://localhost:${port}`);
