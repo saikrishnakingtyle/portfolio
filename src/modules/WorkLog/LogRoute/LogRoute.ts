@@ -41,9 +41,8 @@ router.get("/getworklogs", async function (req, res) {
   }
 });
 
-router.get("/saveactivityLog", async function (req, res) {
-    const activityLog = await saveEmployeeActivityLogsLogic(parseInt(req.query.id));
-    console.log(req.query.id);
+router.post("/saveactivitylog", async function (req, res) {
+    const activityLog = await saveEmployeeActivityLogsLogic(req.body);
   if (activityLog != null || activityLog != undefined) {
     res.send({
       status: 200,
@@ -57,7 +56,7 @@ router.get("/saveactivityLog", async function (req, res) {
   }
 });
 
-router.get("/saveworklog", async function (req, res) {
+router.post("/saveworklog", async function (req, res) {
   // const test3 = await new headstart().userInsert();
   // console.log(test3)
   // const test = await new headstart().bulkInsertActivityLogs();
@@ -65,8 +64,7 @@ router.get("/saveworklog", async function (req, res) {
   // console.log(test)
   // const test2 = await new headstart().bulkInsertWorkLogs();
   // console.log(test2)
-    const worklog = await saveEmployeeWorkLogsLogic(parseInt(req.query.id));
-    console.log(req.query.id);
+    const worklog = await saveEmployeeWorkLogsLogic(req.body);
   if (worklog != null || worklog != undefined) {
     res.send({
       status: 200,

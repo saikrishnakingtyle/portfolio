@@ -24,6 +24,8 @@ export async function saveEmployeeActivityLogsModel (payload: any)
             }
         }
         )
+        console.log("the ourput is this")
+        console.log(employeeActivityLogs)
         return employeeActivityLogs;
 }
 export async function getEmployeeWorkLogsModel (id: number)
@@ -46,12 +48,13 @@ export async function saveEmployeeWorkLogsModel (payload: any)
     const employeeWorkLogs = await prisma.workLogs.create(
         {
             data : {
-                    activityLogId: payload.id,
+                    activityLogId: payload.activityId,
                     title: payload.title,
                     description: payload.description,
                     content: payload.content
             }
         }
         )
+        console.log("what the hell")
         return employeeWorkLogs;
 }

@@ -10,6 +10,10 @@ export async function saveEmployeeActivityLogsLogic (payload : any)
     const employeeActivityLog = await saveEmployeeActivityLogsModel(payload);
     return employeeActivityLog;
 }
+async function getActivityObj(obj)
+{
+    // let activityLog = new Acti
+}
 
 export async function getEmployeeWorkLogsLogic (id : number)
 {
