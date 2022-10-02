@@ -1,4 +1,12 @@
-import { getEmployeeActivityLogsModel, getEmployeeWorkLogsModel, saveEmployeeActivityLogsModel, saveEmployeeWorkLogsModel } from "../LogModels/LogModels";
+import { 
+    deleteEmployeeActivityLogsModel,
+    deleteEmployeeLogModel,
+    getEmployeeActivityLogsModel, 
+    getEmployeeWorkLogsModel, 
+    saveEmployeeActivityLogsModel, 
+    saveEmployeeWorkLogsModel,
+    updateEmployeeActivityLogsModel,
+    updateEmployeeLogModel } from "../LogModels/LogModels";
 
 export async function getEmployeeActivityLogsLogic (id : number)
 {
@@ -23,5 +31,33 @@ export async function getEmployeeWorkLogsLogic (id : number)
 export async function saveEmployeeWorkLogsLogic (payload : any)
 {
     const employeeActivityLog = await saveEmployeeWorkLogsModel(payload);
+    return employeeActivityLog;
+}
+
+export async function updateEmployeeActivityLogsLogic (payload : any)
+{
+    console.log("into the logic")
+    const employeeActivityLog = await updateEmployeeActivityLogsModel(payload);
+    return employeeActivityLog;
+}
+
+export async function updateEmployeeWorkLogLogic (payload : any)
+{                                
+    console.log("into the logic")    
+    const employeeActivityLog = await updateEmployeeLogModel(payload);
+    return employeeActivityLog;
+}
+
+export async function deleteEmployeeActivityLogsLogic (id : any)
+{
+    console.log("into the logic")
+    const employeeActivityLog = await deleteEmployeeActivityLogsModel(id);
+    return employeeActivityLog;
+}
+
+export async function deleteEmployeeWorkLogLogic (id : any)
+{                                
+    console.log("into the logic")    
+    const employeeActivityLog = await deleteEmployeeLogModel(id);
     return employeeActivityLog;
 }

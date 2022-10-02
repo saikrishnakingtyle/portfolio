@@ -1,0 +1,9 @@
+UPDATE localhost:3000/log/updateactivitylog
+Content-Type: application/json
+
+{
+    "id": 1,
+    "date":"2022-09-29 18:27:48.052",
+    "description":"this is good lala",
+    "userId":1
+}

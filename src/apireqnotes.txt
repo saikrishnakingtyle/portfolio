@@ -1,0 +1,8 @@
+### Request 1
+[GET|POST] [REST API URL] # Request Line
+[Request Headers]
+[Request Body]
+### Request 2
+[GET|POST] [REST API URL]
+[Request Headers]
+[Request Body]
