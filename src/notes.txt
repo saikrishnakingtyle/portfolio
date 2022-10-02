@@ -9,3 +9,6 @@ git push -u  origin main
 
 git push https://krishCoolCoder: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@github.com/krishCoolCoder/portfolio.git
 git push https://krishCoolCoder:rk7izaqt6c2bffamdtjksw3746raquvjvhk5vak3pqu2qda6jcaq@github.com/krishCoolCoder/portfolio.git
+git push https://krishCoolCoder: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@github.com/krishCoolCoder/portfolio.git
+
+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
